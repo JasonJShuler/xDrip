@@ -7,7 +7,7 @@ import android.databinding.ObservableList;
 import android.databinding.ViewDataBinding;
 import android.graphics.Color;
 import android.os.Bundle;
-import android.support.annotation.LayoutRes;
+import androidx.annotation.LayoutRes;
 import android.support.v4.view.MenuItemCompat;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;

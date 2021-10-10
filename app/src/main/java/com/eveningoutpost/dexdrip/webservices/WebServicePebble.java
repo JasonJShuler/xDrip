@@ -1,6 +1,6 @@
 package com.eveningoutpost.dexdrip.webservices;
 
-import android.support.annotation.NonNull;
+import androidx.annotation.NonNull;
 import android.util.Log;
 
 import com.eveningoutpost.dexdrip.BestGlucose;

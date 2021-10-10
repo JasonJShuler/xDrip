@@ -14,7 +14,7 @@ import com.eveningoutpost.dexdrip.UtilityModels.PrefsViewImpl;
 import com.eveningoutpost.dexdrip.databinding.ActivityDepositActivityBinding;
 import com.eveningoutpost.dexdrip.ui.dialog.GenericConfirmDialog;
 
-import android.support.annotation.RequiresApi;
+import androidx.annotation.RequiresApi;
 import lombok.RequiredArgsConstructor;
 
 import static com.eveningoutpost.dexdrip.Models.JoH.tsl;

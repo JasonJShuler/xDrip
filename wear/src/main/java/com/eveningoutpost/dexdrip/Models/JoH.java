@@ -43,7 +43,7 @@ import android.os.PowerManager;
 import android.os.Vibrator;
 import android.provider.Settings;
 //KS import android.support.v7.app.AlertDialog;
-//KS import android.support.v4.app.NotificationCompat;
+//KS import androidx.core.app.NotificationCompat;
 //KS import android.support.v7.app.AppCompatActivity;
 //KS import android.support.v7.view.ContextThemeWrapper;
 import android.text.InputType;

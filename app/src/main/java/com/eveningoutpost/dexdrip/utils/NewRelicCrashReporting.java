@@ -76,7 +76,7 @@ public class NewRelicCrashReporting {
         com.newrelic.agent.android.NewRelic.disableFeature(FeatureFlag.NetworkErrorRequests);
         com.newrelic.agent.android.NewRelic.disableFeature(FeatureFlag.NetworkRequests);
         com.newrelic.agent.android.NewRelic.disableFeature(FeatureFlag.DefaultInteractions);
-        com.newrelic.agent.android.NewRelic.disableFeature(FeatureFlag.GestureInstrumentation);
+        //com.newrelic.agent.android.NewRelic.disableFeature(FeatureFlag.GestureInstrumentation);
         com.newrelic.agent.android.NewRelic.disableFeature(FeatureFlag.HttpResponseBodyCapture);
         com.newrelic.agent.android.NewRelic.disableFeature(FeatureFlag.DistributedTracing);
         try {

@@ -57,3 +57,8 @@ patches/
 *.dll
 *.exe
 *.iml
+
+# Other
+.project
+.settings
+.classpath

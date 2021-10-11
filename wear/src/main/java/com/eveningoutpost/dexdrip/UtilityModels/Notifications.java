@@ -714,7 +714,7 @@ public class Notifications extends IntentService {
         mBuilder.setVibrate(vibratePattern);
         mBuilder.setLights(0xff00ff00, 300, 1000);
         if(calibration_override_silent) {
-            mBuilder.setSound(Uri.parse(calibration_notification_sound), AudioAttributes.USAGE_ALARM);
+            mBuilder.setSound(Uri.parse(calibration_notification_sound), AudioManager.STREAM_ALARM);
         } else {
             mBuilder.setSound(Uri.parse(calibration_notification_sound));
         }
@@ -884,7 +884,7 @@ public class Notifications extends IntentService {
             mBuilder.setLights(0xff00ff00, 300, 1000);
             if (AlertPlayer.notSilencedDueToCall()) {
                 if (otherAlertsOverrideSilent) {
-                    mBuilder.setSound(Uri.parse(otherAlertsSound), AudioAttributes.USAGE_ALARM);
+                    mBuilder.setSound(Uri.parse(otherAlertsSound), AudioManager.STREAM_ALARM);
                 } else {
                     mBuilder.setSound(Uri.parse(otherAlertsSound));
                 }

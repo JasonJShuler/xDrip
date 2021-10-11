@@ -814,11 +814,11 @@ public class Notifications extends IntentService {
 
     private void calibrationNotificationCreate(String title, String content, Intent intent, int notificationId) {
         NotificationCompat.Builder mBuilder = notificationBuilder(title, content, intent, NotificationChannels.CALIBRATION_CHANNEL);
-        mBuilder.setVisibility(Pref.getBooleanDefaultFalse("public_notifications") ? Notification.VISIBILITY_PUBLIC : Notification.VISIBILITY_PRIVATE);
+        mBuilder.setVisibility(Pref.getBooleanDefaultFalse("public_notifications") ? NotificationCompat.VISIBILITY_PUBLIC : NotificationCompat.VISIBILITY_PRIVATE);
         mBuilder.setVibrate(vibratePattern);
         mBuilder.setLights(0xff00ff00, 300, 1000);
         if(calibration_override_silent) {
-            mBuilder.setSound(Uri.parse(calibration_notification_sound), AudioAttributes.USAGE_ALARM);
+            mBuilder.setSound(Uri.parse(calibration_notification_sound), AudioManager.STREAM_ALARM);
         } else {
             mBuilder.setSound(Uri.parse(calibration_notification_sound));
         }
@@ -836,7 +836,7 @@ public class Notifications extends IntentService {
 
     private NotificationCompat.Builder notificationBuilder(String title, String content, Intent intent, String channelId) {
         return new NotificationCompat.Builder(mContext, channelId)
-                .setVisibility(Pref.getBooleanDefaultFalse("public_notifications") ? Notification.VISIBILITY_PUBLIC : Notification.VISIBILITY_PRIVATE)
+                .setVisibility(Pref.getBooleanDefaultFalse("public_notifications") ? NotificationCompat.VISIBILITY_PUBLIC : NotificationCompat.VISIBILITY_PRIVATE)
                 .setSmallIcon(R.drawable.ic_action_communication_invert_colors_on)
                 .setContentTitle(title)
                 .setContentText(content)
@@ -1002,7 +1002,7 @@ public class Notifications extends IntentService {
             Intent intent = new Intent(context, Home.class);
             NotificationCompat.Builder mBuilder =
                     new NotificationCompat.Builder(context, channelId)
-                            .setVisibility(Pref.getBooleanDefaultFalse("public_notifications") ? Notification.VISIBILITY_PUBLIC : Notification.VISIBILITY_PRIVATE)
+                            .setVisibility(Pref.getBooleanDefaultFalse("public_notifications") ? NotificationCompat.VISIBILITY_PUBLIC : NotificationCompat.VISIBILITY_PRIVATE)
                             .setSmallIcon(R.drawable.ic_action_communication_invert_colors_on)
                             .setContentTitle(title)
                             .setContentText(message)
@@ -1019,7 +1019,7 @@ public class Notifications extends IntentService {
             mBuilder.setLights(0xff00ff00, 300, 1000);
             if (AlertPlayer.notSilencedDueToCall()) {
                 if (otherAlertsOverrideSilent && Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-                    mBuilder.setSound(Uri.parse(otherAlertsSound), AudioAttributes.USAGE_ALARM);
+                    mBuilder.setSound(Uri.parse(otherAlertsSound), AudioManager.STREAM_ALARM);
                 } else {
                     mBuilder.setSound(Uri.parse(otherAlertsSound));
                 }

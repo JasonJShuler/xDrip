@@ -68,44 +68,10 @@ public class ShareFollowService extends ForegroundService {
     @Override
     public void onCreate() {
         super.onCreate();
-//        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O)
-//            startMyOwnForeground();
-//        else
-//            startForeground(1, new Notification());
+        UserError.Log.i(TAG, "onCreate: STARTING SERVICE");
 
         resetInstance(); // manage static reference life cycle
     }
-
-    /*
-
-            if (useOngoingChannel() && Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-            b = new Notification.Builder(mContext, NotificationChannels.ONGOING_CHANNEL);
-            b.setSound(null);
-        } else {
-            b = new Notification.Builder(mContext);
-        }
-     */
-
-//    private void startMyOwnForeground(){
-//        String NOTIFICATION_CHANNEL_ID = "com.eveningoutpost.dexdrip";
-//        String channelName = "sharefollow";
-//        NotificationChannel chan = new NotificationChannel(NOTIFICATION_CHANNEL_ID, channelName, NotificationManager.IMPORTANCE_NONE);
-//        chan.setLightColor(Color.BLUE);
-//        chan.setLockscreenVisibility(Notification.VISIBILITY_PRIVATE);
-//        NotificationManager manager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
-//        assert manager != null;
-//        manager.createNotificationChannel(chan);
-//
-//        NotificationCompat.Builder notificationBuilder = new NotificationCompat.Builder(this, NOTIFICATION_CHANNEL_ID);
-//        Notification notification = notificationBuilder.setOngoing(true)
-//                .setSmallIcon(R.drawable.nsfollow_icon)
-//                .setContentTitle("App is running in background")
-//                .setPriority(NotificationManager.IMPORTANCE_MIN)
-//                .setCategory(Notification.CATEGORY_SERVICE)
-//                .build();
-//        startForeground(2, notification);
-//    }
-
 
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {

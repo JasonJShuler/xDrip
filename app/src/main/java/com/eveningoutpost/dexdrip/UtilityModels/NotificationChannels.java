@@ -41,6 +41,8 @@ public class NotificationChannels {
     public static final String BG_PERSISTENT_HIGH_CHANNEL = "bgPersistentHighChannel";
     public static final String CALIBRATION_CHANNEL = "calibrationChannel";
     public static final String ONGOING_CHANNEL = "ongoingChannel";
+    //New Android requires notification channels for foreground service activation
+    public static final String LISTENER_CHANNEL = "listenerChannel";
 
     // get a localized string for each channel / group name
     public static String getString(String id) {
@@ -65,6 +67,7 @@ public class NotificationChannels {
         map.put(BG_PERSISTENT_HIGH_CHANNEL, xdrip.getAppContext().getString(R.string.persistent_high_alert));
         map.put(CALIBRATION_CHANNEL, xdrip.getAppContext().getString(R.string.calibration_alerts));
         map.put(ONGOING_CHANNEL, "Ongoing Notification");
+        map.put(LISTENER_CHANNEL, "BG Listener");
     }
 
 

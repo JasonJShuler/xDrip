@@ -159,7 +159,7 @@ def getLocalProperty(String propertyName) {
 }
 
 android {
-    compileSdkVersion 29
+    compileSdkVersion 31
 
     dexOptions {
         javaMaxHeapSize "3g"
@@ -174,7 +174,7 @@ android {
         minSdkVersion 18
         // increasing target SDK version can cause compatibility issues with Android 7+
         //noinspection ExpiredTargetSdkVersion
-        targetSdkVersion 23
+        targetSdkVersion 31
         // change versionCode only when downgrade should be prevented
         // eg, when data structures are incompatible
         versionCode 1603091400

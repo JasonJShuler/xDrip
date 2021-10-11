@@ -77,20 +77,20 @@ public class GcmListenerSvc extends JamListenerSvc {
         return l;
     }
 
-    @Override
-    protected Intent zzD(Intent inteceptedIntent) {
-        // intercept and fix google play services wakelocking bug
-        try {
-            if (!Pref.getBooleanDefaultFalse("excessive_wakelocks")) {
-                completeWakefulIntent(inteceptedIntent);
-                final Bundle extras = inteceptedIntent.getExtras();
-                if (extras != null) extras.remove(EXTRA_WAKE_LOCK_ID);
-            }
-        } catch (Exception e) {
-            UserError.Log.wtf(TAG, "Error patching play services: " + e);
-        }
-        return super.zzD(inteceptedIntent);
-    }
+    // @Override
+    // protected Intent zzD(Intent inteceptedIntent) {
+    //     // intercept and fix google play services wakelocking bug
+    //     try {
+    //         if (!Pref.getBooleanDefaultFalse("excessive_wakelocks")) {
+    //             completeWakefulIntent(inteceptedIntent);
+    //             final Bundle extras = inteceptedIntent.getExtras();
+    //             if (extras != null) extras.remove(EXTRA_WAKE_LOCK_ID);
+    //         }
+    //     } catch (Exception e) {
+    //         UserError.Log.wtf(TAG, "Error patching play services: " + e);
+    //     }
+    //     return super.zzD(inteceptedIntent);
+    // }
 
     @Override
     public void onSendError(String msgID, Exception exception) {

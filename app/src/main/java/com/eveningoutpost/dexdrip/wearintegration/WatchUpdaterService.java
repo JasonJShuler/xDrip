@@ -1675,7 +1675,7 @@ public class WatchUpdaterService extends WearableListenerService implements
         forceGoogleApiConnect();
         if (googleApiClient.isConnected()) {
             final Asset asset = Asset.createFromBytes(blob);
-            Log.d(TAG, "sendBlob asset size: " + asset.getData().length);
+            //Log.d(TAG, "sendBlob asset size: " + asset.getData().length);
             final PutDataMapRequest request = PutDataMapRequest.create(path);
             request.getDataMap().putLong("time", new Date().getTime());
             request.getDataMap().putByteArray("asset", blob);
